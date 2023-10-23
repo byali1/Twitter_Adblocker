@@ -1,0 +1,27 @@
+{
+  "name": "Twitter Adblocker",
+  "version": "1.0.0",
+  "description": "It only works if the Twitter language setting is English (created by Ali Ilgin)",
+  "manifest_version": 3,
+  "background":{
+      "service_worker":"background.js"
+      
+  },
+  "content_scripts":[
+      {
+          "js":["content.js"],
+          "matches":["https://*.twitter.com/*","https://*.x.com/*"],
+          "run_at":"document_end"
+      }
+  ],
+  "permissions":["bookmarks","webNavigation","activeTab"],
+  "icons":{
+      "16":"iconV2.png",
+      "48":"iconV2.png",
+      "128":"iconV2.png"
+  },
+  "action":{
+      "default_title":"Twitter Adblocker",
+      "default_popup":"popup.html"
+  }
+}
